@@ -36,7 +36,11 @@
  * Redis
  * Docker
 
-
+## Further developments overview
+ * The feature could be further developed to a complete solution that can show real time weather for any city selected
+ * It can be also used by coordinates to show a real time weather on a Map (Allowed by openweathermap)
+ * The service can also be improved in a way that it fetches weather changes overtime and shows historic weather changes, and help make predictions for the future
+ * It can also be used for data analysis and real time alerts for disasters and storms.
 
 
 
