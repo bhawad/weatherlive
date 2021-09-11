@@ -1,0 +1,44 @@
+body{
+    font-family: "Times New Roman";
+    background-color: lightskyblue;
+}
+
+#statusbar {
+    font-size: small;
+    background-color: black;
+    color: aqua;
+}
+
+.tile-content {
+    height: 80px;
+}
+
+.details-content {
+    height: 120px;
+    padding-bottom: 7px;
+}
+
+.details {
+    height: 5px!important;
+    font-size: smaller;
+}
+
+.weather-tile {
+    margin-left: 10px;
+    border-radius: 5px;
+    background-color: aliceblue;
+    border: 3px aliceblue solid;
+}
+
+.city-name {
+    font-family: Times;
+    font-size: xx-large;
+}
+
+.tempreature {
+    font-size: smaller;
+}
+
+.weather-desc {
+    font-size: smaller;
+}

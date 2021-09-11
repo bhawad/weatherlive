@@ -1,0 +1,20 @@
+version: "3"
+services:
+  redis:
+    image: "redis:latest"
+    restart: always
+    ports:
+      - "6379:6379"
+  hrmanager:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    environment:
+      - SPRING_REDIS_HOST=redis
+    ports:
+      - "6060:6060"
+    links:
+      - redis
+    depends_on:
+      - redis
