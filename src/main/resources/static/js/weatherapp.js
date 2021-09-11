@@ -7,6 +7,10 @@ $(function () {
     //open websocket connection
     connect();
 
+    $("#inputCityName").on("change paste keyup", function () {
+        loadAvailableCities()
+    });
+
 });
 
 
@@ -20,7 +24,7 @@ function connect() {
         loadAvailableCities();
     });
 
-    socket.onclose = function() {
+    socket.onclose = function () {
         stompClient.disconnect();
         $("#statuslabel").text("Disconnected from weather server, refresh the page to reconnect.");
     };
@@ -28,6 +32,7 @@ function connect() {
 
 
 function loadAvailableCities() {
+    $("#weather-content").empty()
     axios.get("/city")
         .then(response => renderAndSubscribeToCities(response.data))
         .catch(function (error) {
@@ -41,7 +46,9 @@ function loadAvailableCities() {
 function renderAndSubscribeToCities(cities) {
     if (cities) {
         cities.forEach((city, i) => {
-            subscribeToCityLiveWeather(city)
+            if (!$("#inputCityName").val() || city.includes($("#inputCityName").val())) {
+                subscribeToCityLiveWeather(city)
+            }
         });
     }
 }

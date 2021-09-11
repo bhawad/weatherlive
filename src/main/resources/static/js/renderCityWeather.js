@@ -7,6 +7,11 @@ function showCityError(city) {
 function renderCityWeather(cityWeatherData) {
 
     let cityId = cityWeatherData.name
+
+    if ($("#inputCityName").val() && !cityId.includes($("#inputCityName").val())) {
+        return
+    }
+
     let cityTile = null;
 
     if ($("#".concat(cityId)).length) {
