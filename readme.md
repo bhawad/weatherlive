@@ -36,6 +36,11 @@
  * Redis
  * Docker
 
+## How to run it
+ * Make sure you have free ports `6060` and `6379`
+ * Run the command `docker-compose up --build` on the root file of the repository
+ * After it is running successfully, access `http://localhost:6060`
+
 ## Further developments overview
  * The feature could be further developed to a complete solution that can show real time weather for any city selected
  * It can be also used by coordinates to show a real time weather on a Map (Allowed by openweathermap)
